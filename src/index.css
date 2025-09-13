@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Global body styling */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f8fafc, #eef2f5);
+  cursor:crosshair;
+}
+
+/* Liquid Glass / Frosted Glass effect */
+.liquid-glass {
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.15);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Component gradient */
+.main-component {
+  background: linear-gradient(135deg, rgba(245, 243, 255, 0.6), rgba(229, 236, 255, 0.6));
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.15);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Floating animation for profile picture */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Slide-up animation for text and buttons */
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+/* Premium Button Styling */
+.premium-button {
+  background: rgba(67, 56, 202, 0.7);
+  border: 1px solid rgba(67, 56, 202, 0.5);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.premium-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.0) 60%);
+  transform: rotate(25deg) translateX(0);
+  transition: transform 0.5s ease;
+}
+
+.premium-button:hover {
+  background: rgba(67, 56, 202, 0.85);
+  box-shadow: 0 8px 24px 0 rgba(67, 56, 202, 0.3);
+  transform: scale(1.05) translateY(-2px);
+}
+
+.premium-button:hover::before {
+  transform: rotate(25deg) translateX(100%);
+}
+
+/* Custom cursor tracker */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none; /* so it doesn't block clicks */
+  background: rgba(67, 56, 202, 0.7);
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease, background 0.15s ease;
+  z-index: 9999;
+}
+
+.custom-cursor.hovered {
+  width: 32px;
+  height: 32px;
+  background: rgba(67, 156, 255, 0.7);
+}
