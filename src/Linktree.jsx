@@ -14,7 +14,7 @@ const links = [
     { label: "GitHub", url: "https://github.com/anshul-rohilla4" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/anshul-rohilla-5629a2210/" },
     { label: "Email Me", url: "mailto:anshulrohilla111@gmail.com" },
-    { label: "My Portfolio", url: "#" },
+    { label: "My Portfolio", url: "https://68c5cd035e874fb299e1cb1f--anshulr.netlify.app/" },
 ];
 
 const Linktree = () => {
